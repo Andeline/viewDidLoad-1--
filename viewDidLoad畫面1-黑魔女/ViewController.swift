@@ -7,9 +7,13 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 
 class ViewController: UIViewController {
+    
+    let player = AVPlayer()
+    //生成播放音樂的AVPlayer物件
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +66,7 @@ class ViewController: UIViewController {
                 
         let scene = SKScene(size: skView.frame.size)
         //SKView顯示的內容由SKScene控制，因此產生SKScene
-        scene.anchorPoint = CGPoint(x: 0.5, y: 0.07)
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.35)
         //設定火的位置，畫面左下角(0, 0)，右上角(1, 1)
                 
         let emitterNode = SKEmitterNode(fileNamed: "MyFireParticle")
@@ -82,14 +86,15 @@ class ViewController: UIViewController {
         let moonImageView = UIImageView(frame: CGRect(x: 250, y: 50, width: 100, height: 100))
         moonImageView.alpha = 0.3
                 
-        //位移&縮放
-        batImageView.transform = CGAffineTransform.identity.scaledBy(x: 0.45, y: 0.45).translatedBy(x: 3, y: 3)
-        smallBatImageView.transform = CGAffineTransform.identity.scaledBy(x: 0.35, y: 0.35).translatedBy(x: 2.5, y: 2.5)
+        //位移&縮放&旋轉
+        let oneDegree = CGFloat.pi / 180
+        batImageView.transform = CGAffineTransform.identity.scaledBy(x: 0.45, y: 0.45).translatedBy(x: 3, y: 3).rotated(by: oneDegree * -25)
+        smallBatImageView.transform = CGAffineTransform.identity.scaledBy(x: 0.35, y: 0.35).translatedBy(x: 1, y: 2.5)
                 
         //把imageView加入view
         view.addSubview(batImageView)
-        view.addSubview(moonImageView)
         view.addSubview(smallBatImageView)
+        view.addSubview(moonImageView)
                 
         //產生動畫圖片的array
         var batImages = [UIImage]()
@@ -129,6 +134,22 @@ class ViewController: UIViewController {
         batImageView.startAnimating()
         smallBatImageView.startAnimating()
         moonImageView.startAnimating()
+        
+        
+        //【加入背景音樂】
+        let fileUrl = Bundle.main.url(forResource: "music", withExtension: "mp3")!
+        /*產生音樂在app裡的路徑URL
+        Bundle.main為app主要的資料夾，呼叫function url，可取得在資料夾裡的url，並輸入其檔名及副檔名*/
+        
+        let playerItem = AVPlayerItem(url: fileUrl)
+        //利用AVPlayerItem生成要播的音樂
+        
+        player.replaceCurrentItem(with: playerItem)
+        //設定player要播放的AVPlayerItem
+        
+        player.play()
+        //播放
+    
     }
 
 

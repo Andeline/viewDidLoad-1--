@@ -14,6 +14,7 @@
 		57CB8B4326259891004316F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CB8B4226259891004316F9 /* Assets.xcassets */; };
 		57CB8B4626259891004316F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CB8B4426259891004316F9 /* LaunchScreen.storyboard */; };
 		57CB8B4F26259916004316F9 /* MyFireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57CB8B4E26259916004316F9 /* MyFireParticle.sks */; };
+		57CB8B522626D615004316F9 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57CB8B512626D615004316F9 /* music.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		57CB8B4526259891004316F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57CB8B4726259891004316F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57CB8B4E26259916004316F9 /* MyFireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyFireParticle.sks; sourceTree = "<group>"; };
+		57CB8B512626D615004316F9 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		57CB8B382625988E004316F9 /* viewDidLoad畫面1-黑魔女 */ = {
 			isa = PBXGroup;
 			children = (
+				57CB8B512626D615004316F9 /* music.mp3 */,
 				57CB8B392625988E004316F9 /* AppDelegate.swift */,
 				57CB8B3B2625988E004316F9 /* SceneDelegate.swift */,
 				57CB8B3D2625988E004316F9 /* ViewController.swift */,
@@ -130,6 +133,7 @@
 				57CB8B4626259891004316F9 /* LaunchScreen.storyboard in Resources */,
 				57CB8B4F26259916004316F9 /* MyFireParticle.sks in Resources */,
 				57CB8B4326259891004316F9 /* Assets.xcassets in Resources */,
+				57CB8B522626D615004316F9 /* music.mp3 in Resources */,
 				57CB8B412625988E004316F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
